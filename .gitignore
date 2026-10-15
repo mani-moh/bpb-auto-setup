@@ -1,0 +1,60 @@
+# Build outputs
+/dist/
+/dist-electron/
+/node_modules/
+/build/
+
+# Electron
+release/
+electron/dist/
+
+# Logs
+npm-debug.log*
+*.log
+logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Database (local data, not source)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Playwright
+test-results/
+playwright-report/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment secrets (never commit real credentials)
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Testing
+coverage/
+.nyc_output/
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Optional npm cache
+.npm
+
+# Electron Builder staging
+builder-debug/
