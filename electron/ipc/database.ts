@@ -1,6 +1,5 @@
 import { ipcMain, IpcMainInvokeEvent } from 'electron';
-import Database from 'better-sqlite3';
-import { initializeDatabase, closeDatabase } from '../database';
+import { getDb, closeDatabase } from '../database';
 import type {
   Deployment,
   CloudflareAccount,
@@ -11,15 +10,6 @@ import type {
 } from '../../shared/types';
 import { createSuccessResponse, createErrorResponse } from '../../shared/ipc';
 import { IPC_CHANNELS } from '../../shared/ipc';
-
-let db: Database.Database | null = null;
-
-export function getDb(): Database.Database {
-  if (!db) {
-    db = initializeDatabase();
-  }
-  return db;
-}
 
 export function setupDatabaseIpc(): void {
   // Deployments

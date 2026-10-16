@@ -51,9 +51,9 @@ function createWindow(): void {
   });
 }
 
-app.whenReady().then(() => {
-  // Initialize database
-  initializeDatabase();
+app.whenReady().then(async () => {
+  // Initialize database (async for sql.js)
+  await initializeDatabase();
 
   // Setup IPC handlers
   setupDatabaseIpc();
