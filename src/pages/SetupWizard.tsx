@@ -33,9 +33,11 @@ export function SetupWizard() {
 
   // Load providers on mount
   useEffect(() => {
-    api.email?.providers?.?.().then((res: any) => {
-      if (res?.success) setProviderList(res.data || []);
-    });
+    if (api.email && typeof api.email.providers === 'function') {
+      api.email.providers().then((res: any) => {
+        if (res?.success) setProviderList(res.data || []);
+      });
+    }
   }, [api]);
 
   const steps = [
